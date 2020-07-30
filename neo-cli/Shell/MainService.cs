@@ -161,21 +161,23 @@ namespace Neo.Shell
             if (tx.Inputs == null) tx.Inputs = new CoinReference[0];
             if (tx.Outputs == null) tx.Outputs = new TransactionOutput[0];
             if (tx.Witnesses == null) tx.Witnesses = new Witness[0];
-            ApplicationEngine engine = ApplicationEngine.Run(tx.Script, tx, null, true);
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Script hash: {scriptHash.ToString()}");
-            sb.AppendLine($"VM State: {engine.State}");
-            sb.AppendLine($"Gas Consumed: {engine.GasConsumed}");
-            sb.AppendLine(
-                $"Evaluation Stack: {new JArray(engine.ResultStack.Select(p => p.ToParameter().ToJson()))}");
-            Console.WriteLine(sb.ToString());
-            if (engine.State.HasFlag(VMState.FAULT))
+            using (ApplicationEngine engine = ApplicationEngine.Run(tx.Script, tx, null, true))
             {
-                Console.WriteLine("Engine faulted.");
-                return true;
-            }
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"Script hash: {scriptHash.ToString()}");
+                sb.AppendLine($"VM State: {engine.State}");
+                sb.AppendLine($"Gas Consumed: {engine.GasConsumed}");
+                sb.AppendLine(
+                    $"Evaluation Stack: {new JArray(engine.ResultStack.Select(p => p.ToParameter().ToJson()))}");
+                Console.WriteLine(sb.ToString());
+                if (engine.State.HasFlag(VMState.FAULT))
+                {
+                    Console.WriteLine("Engine faulted.");
+                    return true;
+                }
 
-            tx.Gas = engine.GasConsumed - Fixed8.FromDecimal(10);
+                tx.Gas = engine.GasConsumed - Fixed8.FromDecimal(10);
+            }
             if (tx.Gas < Fixed8.Zero) tx.Gas = Fixed8.Zero;
             tx.Gas = tx.Gas.Ceiling();
 
@@ -226,19 +228,21 @@ namespace Neo.Shell
             if (tx.Inputs == null) tx.Inputs = new CoinReference[0];
             if (tx.Outputs == null) tx.Outputs = new TransactionOutput[0];
             if (tx.Witnesses == null) tx.Witnesses = new Witness[0];
-            ApplicationEngine engine = ApplicationEngine.Run(tx.Script, tx);
-
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"VM State: {engine.State}");
-            sb.AppendLine($"Gas Consumed: {engine.GasConsumed}");
-            sb.AppendLine(
-                $"Evaluation Stack: {new JArray(engine.ResultStack.Select(p => p.ToParameter().ToJson()))}");
-            Console.WriteLine(sb.ToString());
-            if (engine.State.HasFlag(VMState.FAULT))
+            using (ApplicationEngine engine = ApplicationEngine.Run(tx.Script, tx))
             {
-                Console.WriteLine("Engine faulted.");
-                return true;
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"VM State: {engine.State}");
+                sb.AppendLine($"Gas Consumed: {engine.GasConsumed}");
+                sb.AppendLine(
+                    $"Evaluation Stack: {new JArray(engine.ResultStack.Select(p => p.ToParameter().ToJson()))}");
+                Console.WriteLine(sb.ToString());
+                if (engine.State.HasFlag(VMState.FAULT))
+                {
+                    Console.WriteLine("Engine faulted.");
+                    return true;
+                }
             }
+
             if (NoWallet()) return true;
             tx = DecorateInvocationTransaction(tx);
             if (tx == null)
@@ -1161,7 +1165,7 @@ namespace Neo.Shell
                     foreach (RemoteNode node in LocalNode.Singleton.GetRemoteNodes().Take(Console.WindowHeight - 2).ToArray())
                     {
                         WriteLineWithoutFlicker(
-                            $"  ip: {node.Remote.Address}\tport: {node.Remote.Port}\tlisten: {node.ListenerPort}\theight: {node.LastBlockIndex}");
+                            $"  ip: {node.Remote.Address.ToString().PadRight(15)}\tport: {node.Remote.Port.ToString().PadRight(5)}\tlisten: {node.ListenerPort.ToString().PadRight(5)}\theight: {node.LastBlockIndex}");
                         linesWritten++;
                     }
 
