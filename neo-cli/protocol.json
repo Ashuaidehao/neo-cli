@@ -1,15 +1,15 @@
 ﻿{
   "ProtocolConfiguration": {
-    "Magic": 56753,
+    "Magic": 7474741,
     "AddressVersion": 23,
-    "SecondsPerBlock": 4,
+    "SecondsPerBlock": 15,
     "LowPriorityThreshold": 0.001,
     "StateRootEnableIndex": 6016000,
     "StandbyValidators": [
-      "02b3622bf4017bdfe317c58aed5f4c753f206b7db896046fa7d774bbc4bf7f8dc2"
+      "03c06a78dc5052f1d73cef977bf104bd6ce954a20d369f14681c29122da372ec1f"
     ],
     "SeedList": [
-      "127.0.0.1:20333"
+      "128.1.61.238:34001"
     ],
     "SystemFee": {
       "EnrollmentTransaction": 1000,
