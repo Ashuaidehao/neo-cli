@@ -1,0 +1,25 @@
+﻿{
+  "ApplicationConfiguration": {
+    "Paths": {
+      "Chain": "Chain_{0}",
+      "Index": "Index_{0}"
+    },
+    "P2P": {
+      "Port": 60001,
+      "WsPort": 60003
+    },
+    "RPC": {
+      "BindAddress": "127.0.0.1",
+      "Port": 60002,
+      "SslCert": "",
+      "SslCertPassword": ""
+    },
+    "UnlockWallet": {
+      "Path": "1.json",
+      "Password": "123456",
+      "StartConsensus": false,
+      "IsActive": true
+    },
+    "PluginURL": "https://github.com/neo-project/neo-plugins/releases/download/v{1}/{0}.zip"
+  }
+}

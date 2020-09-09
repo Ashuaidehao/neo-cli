@@ -1,0 +1,32 @@
+﻿{
+  "ProtocolConfiguration": {
+    "Magic": 513123,
+    "AddressVersion": 23,
+    "SecondsPerBlock": 15,
+    "LowPriorityThreshold": 0.001,
+    "StateRootEnableIndex": 50,
+    "FreeGasChangeHeight": 220,
+    "StandbyValidators": [
+      "0266b915a3c770f8aaeac3dbc40fb9c98f60cd7d03ca40984484323d2d648a1498",
+      "0213b7cfbfabe6a9df59fd365f8454e8d48c2f5b907f1c8b8e5653df1cca28ad73",
+      "02eb3940d866075d4b6e5cebf3ff92d629f866eac4d6d587ca7a96b7270d0cbaee",
+      "02f650e4f311384304ae9b1299408e5974707014bf5fca42ae34cf2827d9f4d9de",
+      "02b4713b2080515cb40f893c88e50dbcd8ac8e5ab81350595ca6c4c92af12328d6",
+      "02bcd3f2a5429f566d0833f817374abd2513785b1e95e2a1002e1642ba8194eee3",
+      "0252f604a8aa512b4a012256e7e7e46fa1ccc15c3f351545bd91ca2e8fe54a6ddf"
+    ],
+    "SeedList": [
+      "seed1t.neo.org:11333",
+      "seed2t.neo.org:11333",
+      "seed3t.neo.org:11333",
+      "seed4t.neo.org:11333",
+      "seed5t.neo.org:11333"
+    ],
+    "SystemFee": {
+      "EnrollmentTransaction": 1000,
+      "IssueTransaction": 500,
+      "PublishTransaction": 500,
+      "RegisterTransaction": 1000
+    }
+  }
+}
