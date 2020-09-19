@@ -1261,8 +1261,9 @@ namespace Neo.Shell
                     Settings.Default.RPC.Port,
                     wallet: Program.Wallet,
                     sslCert: Settings.Default.RPC.SslCert,
-                    password: Settings.Default.RPC.SslCertPassword
-                    );
+                    password: Settings.Default.RPC.SslCertPassword,
+                    extraGasInvoke: Settings.Default.RPC.ExtraGasInvoke,
+                    maxConcurrentConnections: Settings.Default.RPC.MaxConcurrentConnections);
             }
         }
 

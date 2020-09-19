@@ -16,9 +16,9 @@
       "0252f604a8aa512b4a012256e7e7e46fa1ccc15c3f351545bd91ca2e8fe54a6ddf"
     ],
     "SeedList": [
-      "seed1t.neo.org:11333",
-      "seed2t.neo.org:11333",
-      "seed3t.neo.org:11333",
+      //"seed1t.neo.org:11333",
+      //"seed2t.neo.org:11333",
+      //"seed3t.neo.org:11333",
       "seed4t.neo.org:11333",
       "seed5t.neo.org:11333"
     ],
