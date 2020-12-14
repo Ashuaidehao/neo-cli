@@ -10,17 +10,17 @@
     },
     "RPC": {
       "BindAddress": "127.0.0.1",
-      "Port": 20332,
+      "Port": 60002,
       "SslCert": "",
       "SslCertPassword": "",
       "ExtraGasInvoke": "0",
       "MaxConcurrentConnections": "10"
     },
     "UnlockWallet": {
-      "Path": "",
-      "Password": "",
+      "Path": "1.json",
+      "Password": "123456",
       "StartConsensus": false,
-      "IsActive": false
+      "IsActive": true
     },
     "PluginURL": "https://github.com/neo-project/neo-plugins/releases/download/v{1}/{0}.zip"
   }
