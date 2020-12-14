@@ -5,6 +5,8 @@
     "SecondsPerBlock": 15,
     "LowPriorityThreshold": 0.001,
     "StateRootEnableIndex": 6016000,
+    "FreeGasChangeHeight": 6195000,
+    "MinimumNetworkFee": 0,
     "StandbyValidators": [
       "03c06a78dc5052f1d73cef977bf104bd6ce954a20d369f14681c29122da372ec1f"
     ],
