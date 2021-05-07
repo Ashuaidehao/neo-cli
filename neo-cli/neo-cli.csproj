@@ -23,10 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Neo.LevelDb.Dev" Version="3.0.0-pre4" />
     <PackageReference Include="Neo" Version="3.0.0-rc2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\neo\src\neo\neo.csproj" />
     <ProjectReference Include="..\Neo.ConsoleService\Neo.ConsoleService.csproj" />
   </ItemGroup>
 
