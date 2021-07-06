@@ -1,37 +1,112 @@
+//{
+//  "ApplicationConfiguration": {
+//    "Logger": {
+//      "Path": "Logs",
+//      "ConsoleOutput": false,
+//      "Active": false
+//    },
+//    "Storage": {
+//      "Engine": "LevelDBStore",
+//      "Path": "Data_LevelDB_55555"
+//    },
+//    "P2P": {
+//      "Port": 30333,
+//      "WsPort": 30334
+//    },
+//    "UnlockWallet": {
+//      "Path": "0.json",
+//      "Password": "123456",
+//      "StartConsensus": true,
+//      "IsActive": true
+//    },
+//    "PluginURL": "https://github.com/neo-project/neo-modules/releases/download/v{1}/{0}.zip"
+//  },
+//  "ProtocolConfiguration": {
+//    "Network": 55555,
+//    "MillisecondsPerBlock": 15000,
+//    "MaxTraceableBlocks": 2102400,
+//    "ValidatorsCount": 1,
+//    "StandbyCommittee": [
+//      "021821807f923a3da004fb73871509d7635bcc05f41edef2a3ca5c941d8bbc1231"
+//    ],
+//    "SeedList": [
+//      //"127.0.0.1:10333"
+//      "20.198.249.57:30333"
+//    ]
+//  }
+//}
+
+//{
+//  "ApplicationConfiguration": {
+//    "Logger": {
+//      "Path": "Logs",
+//      "ConsoleOutput": false,
+//      "Active": false
+//    },
+//    "Storage": {
+//      "Engine": "LevelDBStore",
+//      "Path": "Data_LevelDB_55667788"
+//    },
+//    "P2P": {
+//      "Port": 30333,
+//      "WsPort": 30334
+//    },
+//    "UnlockWallet": {
+//      "Path": "0.json",
+//      "Password": "123456",
+//      "StartConsensus": true,
+//      "IsActive": true
+//    },
+//    "PluginURL": "https://github.com/neo-project/neo-modules/releases/download/v{1}/{0}.zip"
+//  },
+//  "ProtocolConfiguration": {
+//    "Network": 55667788,//0 fee
+//    "MillisecondsPerBlock": 15000,
+//    "MaxTraceableBlocks": 2102400,
+//    "ValidatorsCount": 1,
+//    "StandbyCommittee": [
+//      "021821807f923a3da004fb73871509d7635bcc05f41edef2a3ca5c941d8bbc1231"
+//    ],
+//    "SeedList": [
+//      //"127.0.0.1:10333"
+//      //"20.198.249.57:30333"
+//    ]
+//  }
+//}
+
 {
   "ApplicationConfiguration": {
     "Logger": {
-      "Path": "Logs",
-      "ConsoleOutput": false,
-      "Active": false
+      "Path": "Logs_Jessica",
+      "ConsoleOutput": true,
+      "Active": true
     },
     "Storage": {
-      "Engine": "LevelDBStore",
-      "Path": "Data_LevelDB_55555"
+      "Engine": "LevelDBStore"
     },
     "P2P": {
-      "Port": 30333,
-      "WsPort": 30334
+      "Port": 33011,
+      "WsPort": 33012,
+      "MaxConnectionsPerAddress": 10
     },
     "UnlockWallet": {
-      "Path": "0.json",
-      "Password": "123456",
-      "StartConsensus": true,
+      "Path": "o4.json",
+      "Password": "1",
       "IsActive": true
     },
-    "PluginURL": "https://github.com/neo-project/neo-modules/releases/download/v{1}/{0}.zip"
+    "PluginURL": "https://github.com/neo-project/neo-plugins/releases/download/v{1}/{0}.zip"
   },
   "ProtocolConfiguration": {
-    "Network": 55555,
+    "Magic": 5195086,
+    "AddressVersion": 53,
     "MillisecondsPerBlock": 15000,
-    "MaxTraceableBlocks": 2102400,
     "ValidatorsCount": 1,
+    "MaxTransactionsPerBlock": 10240,
     "StandbyCommittee": [
-      "021821807f923a3da004fb73871509d7635bcc05f41edef2a3ca5c941d8bbc1231"
+      "02d36af1daf8f13f3e466a39db5027b1b0a248b2cce376a6d1e6b0bffcc6f62600"
     ],
     "SeedList": [
-      //"127.0.0.1:10333"
-      "20.198.249.57:30333"
+      "192.168.1.88:20011"
     ]
   }
 }
